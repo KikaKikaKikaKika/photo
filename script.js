@@ -92,6 +92,18 @@ function moveLight(dir) {
   openLightbox();
 }
 
+/* ── Fade images in as they load ───────────────────────────── */
+if (galleryBoard) {
+  galleryBoard.querySelectorAll('.gallery-item img').forEach(img => {
+    if (img.complete) {
+      img.classList.add('img-ready');
+    } else {
+      img.addEventListener('load', () => img.classList.add('img-ready'));
+      img.addEventListener('error', () => img.classList.add('img-ready'));
+    }
+  });
+}
+
 if (galleryBoard) {
   galleryBoard.querySelectorAll('.gallery-item').forEach(item => {
     item.style.cursor = 'pointer';
