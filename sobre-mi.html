@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kristina Fotógrafa — Sobre mí</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Kristina Fotógrafa" class="logo-img">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html"                data-en="Work"    data-es="Trabajo"  >Trabajo</a></li>
+          <li><a href="sobre-mi.html" class="active" data-en="About"   data-es="Sobre mí" >Sobre mí</a></li>
+          <li><a href="reservar.html"             data-en="Book"    data-es="Reservar" >Reservar</a></li>
+        </ul>
+        <button id="lang-toggle" aria-label="Switch language">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html"    data-en="Work"    data-es="Trabajo"  >Trabajo</a></li>
+      <li><a href="sobre-mi.html" data-en="About"   data-es="Sobre mí" >Sobre mí</a></li>
+      <li><a href="reservar.html" data-en="Book"    data-es="Reservar" >Reservar</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <main class="page-about">
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <img src="images/portrait.jpg" alt="Kristina">
+      </div>
+      <div class="about-content">
+        <span class="section-label available">
+          <span class="heart-icon">♡</span> <span data-en="Available to hire" data-es="Disponible para contratar">Disponible para contratar</span>
+        </span>
+        <h1 data-en="Hi, I'm Kristina" data-es="Hola, soy Kristina">Hola, soy Kristina</h1>
+        <p
+          data-en="I'm Kristina, a photographer based in Spain, specialising in families, couples, and weddings. My work is guided by a belief in authentic emotion — the quiet glances, the laughter, and the tenderness that make each story unique."
+          data-es="Soy Kristina, fotógrafa basada en España, especializada en familias, parejas y bodas. Mi trabajo se guía por la creencia en la emoción auténtica — las miradas discretas, las risas y la ternura que hacen única cada historia."
+          >Soy Kristina, fotógrafa basada en España, especializada en familias, parejas y bodas. Mi trabajo se guía por la creencia en la emoción auténtica — las miradas discretas, las risas y la ternura que hacen única cada historia.</p>
+        <p
+          data-en="My style is rooted in documentary photography with an artistic touch. I work with natural light, in real moments, without forcing poses or interrupting what naturally unfolds. I love blending into the background and capturing genuine connections as they happen."
+          data-es="Mi estilo tiene raíces en la fotografía documental con un toque artístico. Trabajo con luz natural, en momentos reales, sin forzar poses ni interrumpir lo que surge de forma natural. Me encanta pasar desapercibida y capturar conexiones genuinas tal como ocurren."
+          >Mi estilo tiene raíces en la fotografía documental con un toque artístico. Trabajo con luz natural, en momentos reales, sin forzar poses ni interrumpir lo que surge de forma natural. Me encanta pasar desapercibida y capturar conexiones genuinas tal como ocurren.</p>
+        <p
+          data-en="The result is images that feel like memories — because they are."
+          data-es="El resultado son imágenes que parecen recuerdos — porque lo son."
+          >El resultado son imágenes que parecen recuerdos — porque lo son.</p>
+<a href="reservar.html" class="btn"
+          data-en="Work with me"
+          data-es="Trabajar conmigo">Trabajar conmigo</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy"
+        data-en="© 2026 Kristina Fotógrafa. All rights reserved."
+        data-es="© 2026 Kristina Fotógrafa. Todos los derechos reservados."
+        >© 2026 Kristina Fotógrafa. Todos los derechos reservados.</p>
+      <a href="https://kristinasportphotography.com" target="_blank" rel="noopener" class="footer-link"
+        data-en="→ Sport Photography"
+        data-es="→ Fotografía deportiva">→ Fotografía deportiva</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

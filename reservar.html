@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kristina Fotógrafa — Reservar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Kristina Fotógrafa" class="logo-img">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html"                data-en="Work"    data-es="Trabajo"  >Trabajo</a></li>
+          <li><a href="sobre-mi.html"             data-en="About"   data-es="Sobre mí" >Sobre mí</a></li>
+          <li><a href="reservar.html" class="active" data-en="Book"    data-es="Reservar" >Reservar</a></li>
+        </ul>
+        <button id="lang-toggle" aria-label="Switch language">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html"    data-en="Work"    data-es="Trabajo"  >Trabajo</a></li>
+      <li><a href="sobre-mi.html" data-en="About"   data-es="Sobre mí" >Sobre mí</a></li>
+      <li><a href="reservar.html" data-en="Book"    data-es="Reservar" >Reservar</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== BOOK ========== -->
+  <main class="page-book">
+    <div class="book-inner">
+      <span class="section-label available">
+        <span class="heart-icon">♡</span>
+      </span>
+      <h1
+        data-en="Let's create something beautiful"
+        data-es="Creemos algo hermoso">Creemos algo hermoso</h1>
+      <p
+        data-en="Get in touch for details"
+        data-es="Contáctame para más detalles"
+        >Contáctame para más detalles</p>
+      <div class="contact-links">
+        <a href="mailto:hergottovak@gmail.com" class="contact-link">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">hergottovak@gmail.com</span>
+        </a>
+        <a href="https://www.instagram.com/kristina_fotografa/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-label">Instagram</span>
+          <span class="contact-value">@kristina_fotografa</span>
+        </a>
+        <a href="https://www.bodas.net/fotografos/kristina-fotografa--e230770" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-label">Bodas.net</span>
+          <span class="contact-value">Kristina Fotógrafa</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy"
+        data-en="© 2026 Kristina Fotógrafa. All rights reserved."
+        data-es="© 2026 Kristina Fotógrafa. Todos los derechos reservados."
+        >© 2026 Kristina Fotógrafa. Todos los derechos reservados.</p>
+      <a href="https://kristinasportphotography.com" target="_blank" rel="noopener" class="footer-link"
+        data-en="→ Sport Photography"
+        data-es="→ Fotografía deportiva">→ Fotografía deportiva</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
