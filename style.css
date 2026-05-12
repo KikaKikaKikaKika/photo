@@ -169,7 +169,10 @@ ul  { list-style: none; }
   columns: 3;
   column-gap: var(--board-gap);
   padding: var(--board-gap);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
+.gallery-board.board-ready { opacity: 1; }
 
 .gallery-item {
   break-inside: avoid;

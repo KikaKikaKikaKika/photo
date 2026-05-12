@@ -92,16 +92,39 @@ function moveLight(dir) {
   openLightbox();
 }
 
-/* ── Fade images in as they load ───────────────────────────── */
+/* ── Fade images in as they load + reveal board when layout is stable ── */
 if (galleryBoard) {
+  const BOARD_THRESHOLD = 6;
+  let boardReady = false;
+  let loadedCount = 0;
+
+  function checkBoardReady() {
+    if (boardReady) return;
+    loadedCount++;
+    if (loadedCount >= BOARD_THRESHOLD) {
+      boardReady = true;
+      galleryBoard.classList.add('board-ready');
+    }
+  }
+
   galleryBoard.querySelectorAll('.gallery-item img').forEach(img => {
     if (img.complete) {
       img.classList.add('img-ready');
+      checkBoardReady();
     } else {
-      img.addEventListener('load', () => img.classList.add('img-ready'));
-      img.addEventListener('error', () => img.classList.add('img-ready'));
+      img.addEventListener('load', () => { img.classList.add('img-ready'); checkBoardReady(); });
+      img.addEventListener('error', () => { img.classList.add('img-ready'); checkBoardReady(); });
     }
   });
+
+  // Videos count toward the threshold immediately
+  galleryBoard.querySelectorAll('.gallery-item video').forEach(() => checkBoardReady());
+
+  // Fallback: always show after 1.5s
+  setTimeout(() => {
+    boardReady = true;
+    galleryBoard.classList.add('board-ready');
+  }, 1500);
 }
 
 if (galleryBoard) {
