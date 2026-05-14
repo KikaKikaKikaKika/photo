@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kristina Sport Photography</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VD79Y8Q1J1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VD79Y8Q1J1');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav>
+      <a href="#" class="logo" onclick="showPage('grid')"><img src="logo.png" alt="Logo" class="logo-img" /><span class="logo-text">Kristina Sport Photography</span></a>
+      <div class="nav-links">
+        <a href="#" onclick="showPage('grid')" id="nav-grid">Work</a>
+        <a href="#" onclick="showPage('about')" id="nav-about">About</a>
+        <a href="#" onclick="showPage('book')" id="nav-book">Book</a>
+        <a href="#" onclick="showPage('expositions')" id="nav-expositions">Exhibitions</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- GRID PAGE -->
+  <main id="page-grid" class="page active">
+    <div class="filter-bar">
+      <div class="filter-tabs-left"></div>
+      <div class="filter-tabs-right"></div>
+    </div>
+    <div class="filter-bar-mobile">
+      <div class="filter-select-wrap">
+        <select id="filterSelect" class="filter-select"></select>
+        <svg class="select-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <button class="reshuffle-btn" onclick="reshuffleGrid()">↺ Reshuffle</button>
+    </div>
+    <div class="grid" id="photoGrid"></div>
+  </main>
+
+  <!-- ABOUT PAGE -->
+  <main id="page-about" class="page">
+    <div class="about-wrap">
+      <div class="about-photo">
+        <img src="portrait.jpg" alt="Kristina Hergottova" />
+      </div>
+      <div class="about-text">
+        <span class="hire-badge"><span class="hire-dot"></span>Available to hire</span>
+        <h1>Kristina Hergottova</h1>
+        <p class="about-bio">
+          Kristina is a photographer based in Spain focused on movement, emotion, and contrast. Her work captures
+          the energy of sport, the discipline of performance, and the quiet moments in between —
+          blending dynamic action with intimate visual storytelling. With a strong eye for composition
+          and atmosphere, she creates images that feel both powerful and personal, whether documenting
+          athletes, events, or everyday life in motion.
+        </p>
+        <a href="mailto:hergottovak@gmail.com" class="email-link">hergottovak@gmail.com</a>
+        <a href="https://www.instagram.com/kristina_sport_photography/" target="_blank" class="email-link ig-link">&#64;kristina_sport_photography</a>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat">
+        <span class="stat-number">1</span>
+        <span class="stat-label">Book</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Competitions covered</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Sport categories</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Countries</span>
+      </div>
+    </div>
+    <div class="about-news">
+      <div class="news-box">
+        <span class="news-box-label">🔔 NEWS</span>
+        <p class="news-box-text">Exciting projects ahead — this year I'll be photographing the IRONMAN Kärnten-Klagenfurt, Austria, as well as capturing a cyclist inside a wind tunnel in Belgium.</p>
+      </div>
+    </div>
+    <div class="sport-ticker">
+      <div class="ticker-track">
+        <span>Triathlon</span><span>Duathlon</span><span>Run</span><span>Swim</span>
+        <span>Bike</span><span>Box</span><span>Kickbox</span><span>Jujitsu</span>
+        <span>Padel</span><span>Dance</span><span>Kitesurfing</span><span>Foil</span>
+        <span>Basketball</span><span>Surfing</span><span>Rollerskating</span><span>and more</span>
+        <!-- duplicate for seamless loop -->
+        <span>Triathlon</span><span>Duathlon</span><span>Run</span><span>Swim</span>
+        <span>Bike</span><span>Box</span><span>Kickbox</span><span>Jujitsu</span>
+        <span>Padel</span><span>Dance</span><span>Kitesurfing</span><span>Foil</span>
+        <span>Basketball</span><span>Surfing</span><span>Rollerskating</span><span>and more</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- EXPOSITIONS PAGE -->
+  <main id="page-expositions" class="page">
+    <div class="expo-wrap">
+      <div class="expo-header">
+        <p class="expo-main-sub">Selected exhibitions and shows</p>
+        <h1 class="expo-main-title">Exhibitions</h1>
+      </div>
+
+      <div class="expo-list">
+
+        <!-- Exhibition 1 -->
+        <article class="expo-item">
+          <div class="expo-meta">
+            <span class="expo-year">2025</span>
+            <span class="expo-location">Vigo, Spain</span>
+          </div>
+          <div class="expo-content">
+            <h2 class="expo-title">Triathlon Across Spain</h2>
+            <p class="expo-desc">
+              Kristína Hergottová's first exhibition, Triathlon Across Spain, offered a captivating
+              glimpse into the world of triathlon through her lens. The exhibition focused on the
+              cycling segment, one of the sport's most dynamic and visually striking elements,
+              capturing its speed, energy, and intensity. All the photographs on display, taken
+              during 2024 and 2025, ranged from the waves of Zarautz and the festive streets of
+              Frómista to the Paris Paralympic Games and the Championships in Pontevedra, capturing
+              unforgettable moments and the extraordinary spirit of Spanish athletes. They celebrated
+              not only the sport itself, but also the courage, resilience, and relentless pursuit of
+              excellence that defined these athletes.
+            </p>
+            <div class="expo-photos">
+              <img src="expo1.jpg" alt="Exhibition photo 1" onclick="openExpoLight(0)" />
+              <img src="expo2.jpg" alt="Exhibition photo 2" onclick="openExpoLight(1)" />
+              <img src="expo3.jpg" alt="Exhibition photo 3" onclick="openExpoLight(2)" />
+              <img src="expo4.jpg" alt="Exhibition photo 4" onclick="openExpoLight(3)" />
+              <img src="expo5.jpg" alt="Exhibition photo 5" onclick="openExpoLight(4)" />
+              <img src="expo6.jpg" alt="Exhibition photo 6" onclick="openExpoLight(5)" />
+            </div>
+          </div>
+        </article>
+
+        <!-- Add future exhibitions below this line -->
+
+      </div><!-- /.expo-list -->
+    </div><!-- /.expo-wrap -->
+  </main>
+
+  <!-- BOOK PAGE -->
+  <main id="page-book" class="page">
+    <div class="book-wrap">
+      <div class="book-video-col">
+        <video autoplay muted playsinline controls class="book-video">
+          <source src="book-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="book-text-col">
+        <p class="book-label">First Book</p>
+        <h1 class="book-title">Triathlon Across Spain</h1>
+        <p class="book-desc">
+          Triathlon Across Spain is Kristina's first book, a unique collection of photographs
+          capturing the spirit of triathlon across Spain. Featuring images taken during 2024 and
+          2025, the book showcases 12 competitions and more than 50 Spanish triathletes,
+          highlighting some of the most iconic events, from Zarautz and Frómista to Pontevedra
+          and the Paralympic Games in Paris.
+        </p>
+        <p class="book-desc">
+          Through powerful moments on the bike course and beyond, the book tells the story of
+          athletes, resilience, and passion, celebrating not only the sport itself but also the
+          determination and courage behind every race.
+        </p>
+        <div class="book-buy">
+          <span class="book-price">€40</span>
+          <a href="mailto:hergottovak@gmail.com?subject=Book%20Request%3A%20Triathlon%20Across%20Spain&body=Hi%20Kristina%2C%20I%20would%20like%20to%20buy%20the%20book%20Triathlon%20Across%20Spain." class="book-btn">Send request to buy</a>
+        </div>
+        <div class="expo-photos book-gallery">
+          <img src="book1.jpg" alt="Book preview 1" onclick="openBookLight(0)" />
+          <img src="book2.jpg" alt="Book preview 2" onclick="openBookLight(1)" />
+          <img src="book3.jpg" alt="Book preview 3" onclick="openBookLight(2)" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    <button class="lb-prev" onclick="event.stopPropagation(); moveLight(-1)">&#8592;</button>
+    <div class="lb-img-wrap" onclick="event.stopPropagation()">
+      <img id="lb-img" src="" alt="" />
+      <div class="lb-actions">
+        <button class="lb-like" id="lb-like" onclick="event.stopPropagation(); toggleLike()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span id="lb-like-count">0</span>
+        </button>
+        <button class="lb-buy" onclick="event.stopPropagation(); openBuyPopup()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+      </div>
+    </div>
+    <button class="lb-next" onclick="event.stopPropagation(); moveLight(1)">&#8594;</button>
+  </div>
+
+  <!-- BUY POPUP -->
+  <div id="buyPopup" class="buy-popup" onclick="closeBuyPopup()">
+    <div class="buy-popup-box" onclick="event.stopPropagation()">
+      <button class="buy-popup-close" onclick="closeBuyPopup()">&#10005;</button>
+      <p class="buy-popup-title">Interested in this photo?</p>
+      <p class="buy-popup-text">Send an email to <a href="mailto:hergottovak@gmail.com">hergottovak@gmail.com</a> to purchase a digital or printed version.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
