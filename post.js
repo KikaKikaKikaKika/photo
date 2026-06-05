@@ -157,11 +157,12 @@ const commentsForm   = document.getElementById('comments-form');
 const commentsThanks = document.getElementById('comments-thanks');
 
 commentsForm.addEventListener('submit', () => {
+  document.getElementById('fbzx').value = Math.floor(Math.random() * -1e15);
   setTimeout(() => {
     commentsForm.style.display = 'none';
     commentsThanks.style.display = '';
     commentsThanks.textContent = commentsThanks.dataset[lang];
-  }, 500);
+  }, 800);
 });
 
 

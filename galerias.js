@@ -16,7 +16,7 @@
    Make sure each Drive folder is shared:
    Right-click folder → Share → "Anyone with the link" → Viewer
    ──────────────────────────────────────────────────────────── */
-const DRIVE_API_KEY = 'AIzaSyCtSLaVhX4kiwcyRL2lQUO9UC8QnlbaDuE';
+const DRIVE_API_KEY = 'AIzaSyBBrP6Qw2uZW3jsi2lpAQL_51Cf-0wKjB0';
 
 
 /* ─── GALLERY CONFIG ─────────────────────────────────────────
@@ -45,7 +45,7 @@ const GALLERIES = [
     dateEn:      '2 May 2026',
     location:    'Pontevedra',
     password:    'LuciaYAngel26',
-    driveFolder: '1keskSuMz6jgkYcSXOc8dh3CMNRKrw1AG',
+    driveFolder: '1r5pwsVhT6Gjhvq4Fa_vsmfKYJFRvplFi',
     thumbnail:   'images/lucia-angel-thumb.jpg',
   },
   {
