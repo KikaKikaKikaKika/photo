@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kristina Fotógrafa — Galerías privadas</title>
+  <meta name="description" content="Galerías privadas para clientes · Private client galleries">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Kristina Fotógrafa" class="logo-img">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html"      data-en="Work"      data-es="Trabajo"  >Trabajo</a></li>
+          <li><a href="sobre-mi.html"   data-en="About"     data-es="Sobre mí" >Sobre mí</a></li>
+          <li><a href="blog.html"       data-en="Blog"      data-es="Blog"     >Blog</a></li>
+          <li><a href="galerias.html"   data-en="Galleries" data-es="Galerías" class="active">Galerías</a></li>
+          <li><a href="reservar.html"   data-en="Book me"      data-es="Reservar" >Reservar</a></li>
+        </ul>
+        <button id="lang-toggle" aria-label="Switch language">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html"    data-en="Work"      data-es="Trabajo"  >Trabajo</a></li>
+      <li><a href="sobre-mi.html" data-en="About"     data-es="Sobre mí" >Sobre mí</a></li>
+      <li><a href="blog.html"     data-en="Blog"      data-es="Blog"     >Blog</a></li>
+      <li><a href="galerias.html" data-en="Galleries" data-es="Galerías" >Galerías</a></li>
+      <li><a href="reservar.html" data-en="Book me"      data-es="Reservar" >Reservar</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== GALLERY LIST ========== -->
+  <main class="page-galleries" id="page-galleries">
+    <div class="galleries-intro">
+      <span class="section-label" data-en="Private access" data-es="Acceso privado">Acceso privado</span>
+      <h1 data-en="Client Galleries" data-es="Galerías de clientes">Galerías de clientes</h1>
+    </div>
+    <div class="galleries-grid" id="galleries-grid">
+      <!-- populated by galerias.js -->
+    </div>
+  </main>
+
+  <!-- ========== GALLERY VIEW (after unlock) ========== -->
+  <section class="gallery-view" id="gallery-view">
+    <div class="gallery-view-header">
+      <button class="back-btn" id="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-en="Back" data-es="Volver">Volver</span>
+      </button>
+      <div class="gallery-view-meta">
+        <h2 id="gv-name"></h2>
+        <span id="gv-meta"></span>
+      </div>
+      <a class="btn gv-download-btn" id="download-all-btn" href="#" target="_blank" rel="noopener">
+        <span data-en="Download all" data-es="Descargar todo">Descargar todo</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+    </div>
+    <div class="gallery-board board-ready" id="gallery-view-grid"></div>
+  </section>
+
+  <!-- ========== LEGACY MODAL ========== -->
+  <div class="pw-modal" id="legacy-modal">
+    <div class="pw-modal-inner" onclick="event.stopPropagation()">
+      <button class="pw-close" id="legacy-close">&#10005;</button>
+      <p class="pw-gallery-name" data-es="Sesiones anteriores" data-en="Older galleries">Sesiones anteriores</p>
+      <p class="pw-info">
+        <span class="legacy-info-es">Las galerías de sesiones anteriores no están disponibles en este sitio web.<br>Contáctame directamente y te envío tus fotos.</span>
+        <span class="legacy-info-en" style="display:none">Older galleries are not available on this website.<br>Contact me and I will send you your photos.</span>
+      </p>
+      <a class="btn pw-submit" href="mailto:hergottovak@gmail.com">
+        <span data-es="Escribir" data-en="Write to me">Escribir</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ========== PASSWORD MODAL ========== -->
+  <div class="pw-modal" id="pw-modal">
+    <div class="pw-modal-inner" onclick="event.stopPropagation()">
+      <button class="pw-close" id="pw-close">&#10005;</button>
+      <p class="pw-gallery-name" id="pw-gallery-name"></p>
+      <p class="pw-info">
+        <span class="pw-info-es">Cada galería está protegida con una contraseña personal. Si no has recibido la tuya, <a href="mailto:hergottovak@gmail.com">escríbeme</a>.</span>
+        <span class="pw-info-en" style="display:none">Each gallery is protected with a personal password. If you haven't received yours, <a href="mailto:hergottovak@gmail.com">write to me</a>.</span>
+      </p>
+      <label class="pw-label" for="pw-input" data-en="Password" data-es="Contraseña">Contraseña</label>
+      <input type="password" id="pw-input" placeholder="·····" autocomplete="off">
+      <button class="btn pw-submit" id="pw-submit" data-en="Enter" data-es="Entrar">Entrar</button>
+      <p class="pw-error" id="pw-error"></p>
+    </div>
+  </div>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    <button class="lb-prev" onclick="event.stopPropagation(); moveLight(-1)">&#8592;</button>
+    <div class="lb-media-wrap" onclick="event.stopPropagation()">
+      <img id="lb-img" src="" alt="">
+      <video id="lb-video" controls style="display:none"></video>
+    </div>
+    <button class="lb-next" onclick="event.stopPropagation(); moveLight(1)">&#8594;</button>
+  </div>
+
+  <script src="galerias.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kristina Fotógrafa — Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Kristina Fotógrafa" class="logo-img">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html"    data-en="Work"      data-es="Trabajo"  >Trabajo</a></li>
+          <li><a href="sobre-mi.html" data-en="About"     data-es="Sobre mí" >Sobre mí</a></li>
+          <li><a href="blog.html"     data-en="Blog"      data-es="Blog"     class="active">Blog</a></li>
+          <li><a href="galerias.html" data-en="Galleries" data-es="Galerías" >Galerías</a></li>
+          <li><a href="reservar.html" data-en="Book me"      data-es="Reservar" >Reservar</a></li>
+        </ul>
+        <button id="lang-toggle" aria-label="Switch language">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html"    data-en="Work"      data-es="Trabajo"  >Trabajo</a></li>
+      <li><a href="sobre-mi.html" data-en="About"     data-es="Sobre mí" >Sobre mí</a></li>
+      <li><a href="blog.html"     data-en="Blog"      data-es="Blog"     >Blog</a></li>
+      <li><a href="galerias.html" data-en="Galleries" data-es="Galerías" >Galerías</a></li>
+      <li><a href="reservar.html" data-en="Book me"      data-es="Reservar" >Reservar</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== POST ========== -->
+  <main class="page-post" id="page-post">
+
+    <!-- back link -->
+    <a class="post-back" href="blog.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span data-en="Back to blog" data-es="Volver al blog">Volver al blog</span>
+    </a>
+
+    <!-- cover -->
+    <div class="post-cover" id="post-cover" style="display:none">
+      <img id="post-cover-img" src="" alt="">
+    </div>
+
+    <!-- header -->
+    <header class="post-header" id="post-header">
+      <div class="post-meta" id="post-meta"></div>
+      <h1 class="post-title" id="post-title"></h1>
+      <p class="post-subtitle" id="post-subtitle"></p>
+      <div class="post-byline" id="post-byline"></div>
+    </header>
+
+    <!-- content -->
+    <article class="post-content" id="post-content"></article>
+
+    <!-- credits -->
+    <aside class="post-credits" id="post-credits"></aside>
+
+    <!-- comments -->
+    <section class="post-comments">
+      <h3 class="comments-heading" data-en="Leave a comment" data-es="Deja un comentario">Deja un comentario</h3>
+      <form class="comments-form" id="comments-form">
+        <div class="comments-row">
+          <input class="comments-input" type="text" name="name" placeholder="Tu nombre / Your name" required>
+          <input class="comments-input" type="email" name="email" placeholder="Email (no se publica / not published)">
+        </div>
+        <textarea class="comments-textarea" name="message" rows="5" placeholder="Tu comentario / Your comment" required></textarea>
+        <button class="comments-submit" type="submit" data-en="Send" data-es="Enviar">Enviar</button>
+      </form>
+      <p class="comments-thanks" id="comments-thanks" style="display:none" data-en="Thank you for your comment!" data-es="¡Gracias por tu comentario!">¡Gracias por tu comentario!</p>
+    </section>
+
+  </main>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    <button class="lb-prev" onclick="event.stopPropagation(); moveLight(-1)">&#8592;</button>
+    <div class="lb-media-wrap" onclick="event.stopPropagation()">
+      <img id="lb-img" src="" alt="">
+      <video id="lb-video" controls style="display:none"></video>
+    </div>
+    <button class="lb-next" onclick="event.stopPropagation(); moveLight(1)">&#8594;</button>
+  </div>
+
+  <script src="blog-data.js"></script>
+  <script src="post.js"></script>
+</body>
+</html>

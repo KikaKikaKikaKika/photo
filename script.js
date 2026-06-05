@@ -146,15 +146,21 @@ document.addEventListener('keydown', e => {
 });
 
 
-/* ── Reshuffle ──────────────────────────────────────────────── */
+/* ── Shuffle helper ─────────────────────────────────────────── */
+function shuffleGallery() {
+  const items = [...galleryBoard.querySelectorAll('.gallery-item')];
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  items.forEach(item => galleryBoard.appendChild(item));
+}
+
+// Auto-shuffle on every page load (board is invisible until images load, so no flash)
+if (galleryBoard) shuffleGallery();
+
+/* ── Reshuffle button ───────────────────────────────────────── */
 const reshuffleBtn = document.getElementById('reshuffle-btn');
 if (reshuffleBtn && galleryBoard) {
-  reshuffleBtn.addEventListener('click', () => {
-    const items = [...galleryBoard.querySelectorAll('.gallery-item')];
-    for (let i = items.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [items[i], items[j]] = [items[j], items[i]];
-    }
-    items.forEach(item => galleryBoard.appendChild(item));
-  });
+  reshuffleBtn.addEventListener('click', shuffleGallery);
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kristina Fotógrafa — Blog</title>
+  <meta name="description" content="Historias de bodas · Wedding stories">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Kristina Fotógrafa" class="logo-img">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html"    data-en="Work"      data-es="Trabajo"  >Trabajo</a></li>
+          <li><a href="sobre-mi.html" data-en="About"     data-es="Sobre mí" >Sobre mí</a></li>
+          <li><a href="blog.html"     data-en="Blog"      data-es="Blog"     class="active">Blog</a></li>
+          <li><a href="galerias.html" data-en="Galleries" data-es="Galerías" >Galerías</a></li>
+          <li><a href="reservar.html" data-en="Book me"      data-es="Reservar" >Reservar</a></li>
+        </ul>
+        <button id="lang-toggle" aria-label="Switch language">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html"    data-en="Work"      data-es="Trabajo"  >Trabajo</a></li>
+      <li><a href="sobre-mi.html" data-en="About"     data-es="Sobre mí" >Sobre mí</a></li>
+      <li><a href="blog.html"     data-en="Blog"      data-es="Blog"     >Blog</a></li>
+      <li><a href="galerias.html" data-en="Galleries" data-es="Galerías" >Galerías</a></li>
+      <li><a href="reservar.html" data-en="Book me"      data-es="Reservar" >Reservar</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== BLOG LIST ========== -->
+  <main class="page-blog" id="page-blog">
+    <div class="blog-intro">
+      <span class="section-label" data-en="Stories" data-es="Historias">Historias</span>
+      <h1 data-en="Blog" data-es="Blog">Blog</h1>
+    </div>
+    <div class="blog-grid" id="blog-grid">
+      <!-- populated by blog.js -->
+    </div>
+  </main>
+
+  <script src="blog-data.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>
