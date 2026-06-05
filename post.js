@@ -152,6 +152,28 @@ function renderPost() {
 setLang(lang);
 
 
+/* ── Comments form ───────────────────────────────────────────── */
+const commentsForm   = document.getElementById('comments-form');
+const commentsThanks = document.getElementById('comments-thanks');
+
+commentsForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const FORM_ID = '1FAIpQLScT6WLm4OneJj0BA2trtths3ljwGpoCUO4Wm2bciiC3qhg-ew';
+  const data = new FormData();
+  data.append('entry.1420414429', commentsForm.querySelector('[name="name"]').value);
+  data.append('entry.31897132',   commentsForm.querySelector('[name="email"]').value);
+  data.append('entry.1073640126', commentsForm.querySelector('[name="message"]').value);
+  try {
+    await fetch(`https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`, {
+      method: 'POST', body: data, mode: 'no-cors'
+    });
+  } catch (_) {}
+  commentsForm.style.display = 'none';
+  commentsThanks.style.display = '';
+  commentsThanks.textContent = commentsThanks.dataset[lang];
+});
+
+
 /* ── Lightbox ────────────────────────────────────────────────── */
 const lightbox = document.getElementById('lightbox');
 const lbImg    = document.getElementById('lb-img');
