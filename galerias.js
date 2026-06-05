@@ -72,7 +72,11 @@ async function fetchFolderImages(folderId, firstOnly = false) {
   const size   = firstOnly ? 1 : 1000;
   const url    = `https://www.googleapis.com/drive/v3/files?q=${q}&fields=${fields}&orderBy=name&pageSize=${size}&key=${DRIVE_API_KEY}`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`drive-api-${res.status}`);
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    const msg = body?.error?.message || res.status;
+    throw new Error(`drive-api-${res.status}: ${msg}`);
+  }
   const data = await res.json();
   return data.files || [];
 }
@@ -328,7 +332,7 @@ async function openGalleryView(g) {
     const msg = err.message === 'no-api-key'
       ? (lang === 'es' ? 'Falta la clave de API de Google Drive. Añádela en galerias.js.' : 'Google Drive API key missing. Add it in galerias.js.')
       : (lang === 'es' ? 'Error al cargar las imágenes. Comprueba que la carpeta está compartida.' : 'Error loading images. Check that the folder is shared publicly.');
-    gvGrid.innerHTML = `<p class="gv-loading gv-error">${msg}</p>`;
+    gvGrid.innerHTML = `<p class="gv-loading gv-error">${msg}<br><small style="opacity:0.6">${err.message}</small></p>`;
   }
 }
 
