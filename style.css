@@ -948,6 +948,29 @@ ul  { list-style: none; }
 .lb-close { top: 20px; right: 28px; font-size: 20px; }
 .lb-prev  { left: 20px; top: 50%; transform: translateY(-50%); font-size: 28px; }
 .lb-next  { right: 20px; top: 50%; transform: translateY(-50%); font-size: 28px; }
+.lb-download {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: background 0.2s;
+}
+.lb-download:hover { background: rgba(255,255,255,0.28); }
+
+.gv-count {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-left: 8px;
+}
 
 
 /* ============================================================

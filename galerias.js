@@ -275,6 +275,7 @@ const galleryView    = document.getElementById('gallery-view');
 const gvName         = document.getElementById('gv-name');
 const gvMeta         = document.getElementById('gv-meta');
 const gvGrid         = document.getElementById('gallery-view-grid');
+const gvCount        = document.getElementById('gv-count');
 const downloadAllBtn = document.getElementById('download-all-btn');
 const backBtn        = document.getElementById('back-btn');
 
@@ -308,7 +309,8 @@ async function openGalleryView(g) {
       return;
     }
 
-    lightboxMedia = files.map(f => ({ src: driveImgFull(f.id), isVideo: false }));
+    lightboxMedia = files.map(f => ({ src: driveImgFull(f.id), downloadUrl: `https://drive.google.com/uc?export=download&id=${f.id}`, isVideo: false }));
+    gvCount.textContent = `${files.length} photos`;
     gvGrid.innerHTML = '';
 
     files.forEach((f, i) => {
@@ -344,13 +346,20 @@ backBtn.addEventListener('click', () => {
 
 
 /* ─── Lightbox ───────────────────────────────────────────────── */
-const lightbox = document.getElementById('lightbox');
-const lbImg    = document.getElementById('lb-img');
-const lbVideo  = document.getElementById('lb-video');
+const lightbox    = document.getElementById('lightbox');
+const lbImg       = document.getElementById('lb-img');
+const lbVideo     = document.getElementById('lb-video');
+const lbDownload  = document.getElementById('lb-download');
+
+function setLightboxMedia(index) {
+  const m = lightboxMedia[index];
+  lbImg.src = m.src;
+  if (lbDownload) { lbDownload.href = m.downloadUrl || m.src; }
+}
 
 function openLightbox(index) {
   lightboxIndex = index;
-  lbImg.src = lightboxMedia[lightboxIndex].src;
+  setLightboxMedia(index);
   lbImg.style.display   = 'block';
   lbVideo.style.display = 'none';
   lightbox.classList.add('open');
@@ -364,7 +373,7 @@ function closeLightbox() {
 
 function moveLight(dir) {
   lightboxIndex = (lightboxIndex + dir + lightboxMedia.length) % lightboxMedia.length;
-  lbImg.src = lightboxMedia[lightboxIndex].src;
+  setLightboxMedia(lightboxIndex);
 }
 
 document.addEventListener('keydown', e => {

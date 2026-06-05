@@ -68,7 +68,7 @@
       </button>
       <div class="gallery-view-meta">
         <h2 id="gv-name"></h2>
-        <span id="gv-meta"></span>
+        <span id="gv-meta"></span> <span id="gv-count" class="gv-count"></span>
       </div>
       <a class="btn gv-download-btn" id="download-all-btn" href="#" target="_blank" rel="noopener">
         <span data-en="Download all" data-es="Descargar todo">Descargar todo</span>
@@ -116,6 +116,7 @@
     <div class="lb-media-wrap" onclick="event.stopPropagation()">
       <img id="lb-img" src="" alt="">
       <video id="lb-video" controls style="display:none"></video>
+      <a id="lb-download" class="lb-download" download onclick="event.stopPropagation()">&#8595; Download</a>
     </div>
     <button class="lb-next" onclick="event.stopPropagation(); moveLight(1)">&#8594;</button>
   </div>
