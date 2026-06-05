@@ -152,23 +152,6 @@ function renderPost() {
 setLang(lang);
 
 
-/* ── Comments form ───────────────────────────────────────────── */
-const commentsForm   = document.getElementById('comments-form');
-const commentsThanks = document.getElementById('comments-thanks');
-
-commentsForm.addEventListener('submit', async e => {
-  e.preventDefault();
-  const data = new FormData(commentsForm);
-  data.append('post', postId);
-  try {
-    await fetch('https://formspree.io/f/xyzgdjnv', { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-  } catch (_) {}
-  commentsForm.style.display = 'none';
-  commentsThanks.style.display = '';
-  commentsThanks.textContent = commentsThanks.dataset[lang];
-});
-
-
 /* ── Lightbox ────────────────────────────────────────────────── */
 const lightbox = document.getElementById('lightbox');
 const lbImg    = document.getElementById('lb-img');

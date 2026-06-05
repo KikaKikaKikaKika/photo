@@ -720,45 +720,10 @@ ul  { list-style: none; }
   font-weight: 400;
   margin-bottom: 32px;
 }
-.comments-form { display: flex; flex-direction: column; gap: 14px; }
-.comments-row  { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.comments-input,
-.comments-textarea {
+.comments-iframe {
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  background: transparent;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  color: var(--dark);
-  outline: none;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-}
-.comments-input:focus,
-.comments-textarea:focus { border-color: var(--dark); }
-.comments-textarea { resize: vertical; }
-.comments-submit {
-  align-self: flex-start;
-  padding: 11px 32px;
-  background: var(--dark);
-  color: #fff;
+  height: 600px;
   border: none;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-.comments-submit:hover { opacity: 0.75; }
-.comments-thanks {
-  font-size: 15px;
-  color: var(--muted);
-  padding: 20px 0;
-}
-@media (max-width: 600px) {
-  .comments-row { grid-template-columns: 1fr; }
 }
 
 
