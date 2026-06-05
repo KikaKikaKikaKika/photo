@@ -75,14 +75,17 @@
     <!-- comments -->
     <section class="post-comments">
       <h3 class="comments-heading" data-en="Leave a comment" data-es="Deja un comentario">Deja un comentario</h3>
-      <form class="comments-form" id="comments-form">
+      <form class="comments-form" id="comments-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLScT6WLm4OneJj0BA2trtths3ljwGpoCUO4Wm2bciiC3qhg-ew/formResponse"
+            method="POST" target="comments-iframe">
         <div class="comments-row">
-          <input class="comments-input" type="text" name="name" placeholder="Tu nombre / Your name" required>
-          <input class="comments-input" type="email" name="email" placeholder="Email (no se publica / not published)">
+          <input class="comments-input" type="text" name="entry.1420414429" placeholder="Tu nombre / Your name" required>
+          <input class="comments-input" type="email" name="entry.31897132" placeholder="Email (no se publica / not published)">
         </div>
-        <textarea class="comments-textarea" name="message" rows="5" placeholder="Tu comentario / Your comment" required></textarea>
+        <textarea class="comments-textarea" name="entry.1073640126" rows="5" placeholder="Tu comentario / Your comment" required></textarea>
         <button class="comments-submit" type="submit" data-en="Send" data-es="Enviar">Enviar</button>
       </form>
+      <iframe name="comments-iframe" style="display:none"></iframe>
       <p class="comments-thanks" id="comments-thanks" style="display:none" data-en="Thank you for your comment!" data-es="¡Gracias por tu comentario!">¡Gracias por tu comentario!</p>
     </section>
 
