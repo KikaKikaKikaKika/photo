@@ -70,13 +70,38 @@
         <h2 id="gv-name"></h2>
         <span id="gv-meta"></span> <span id="gv-count" class="gv-count"></span>
       </div>
-      <a class="btn gv-download-btn" id="download-all-btn" href="#" target="_blank" rel="noopener">
-        <span data-en="Download all" data-es="Descargar todo">Descargar todo</span>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      </a>
+      <div class="gv-actions">
+        <button class="gv-actions-toggle" id="gv-actions-toggle" aria-label="Más opciones">
+          <svg width="4" height="16" viewBox="0 0 4 16" fill="currentColor"><circle cx="2" cy="2" r="1.5"/><circle cx="2" cy="8" r="1.5"/><circle cx="2" cy="14" r="1.5"/></svg>
+        </button>
+        <div class="gv-actions-menu" id="gv-actions-menu">
+          <button class="btn gv-credits-btn" id="credits-btn" style="display:none">
+            <span data-en="Credits" data-es="Créditos">Créditos</span>
+          </button>
+          <a class="btn gv-blog-btn" id="blog-btn" href="#" target="_blank" rel="noopener" style="display:none">
+            <span data-en="Blog" data-es="Blog">Blog</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a class="btn gv-download-btn" id="download-all-btn" href="#" target="_blank" rel="noopener">
+            <span data-en="Download all" data-es="Descargar todo">Descargar todo</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="gallery-board board-ready" id="gallery-view-grid"></div>
   </section>
+
+  <!-- ========== CREDITS MODAL ========== -->
+  <div class="pw-modal" id="credits-modal">
+    <div class="pw-modal-inner credits-modal-inner" onclick="event.stopPropagation()">
+      <div class="credits-modal-header">
+        <h3 class="credits-heading" data-es="Créditos" data-en="Credits">Créditos</h3>
+        <button class="credits-close" id="credits-close">&#10005;</button>
+      </div>
+      <dl class="credits-list" id="credits-list"></dl>
+    </div>
+  </div>
 
   <!-- ========== LEGACY MODAL ========== -->
   <div class="pw-modal" id="legacy-modal">

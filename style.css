@@ -332,16 +332,14 @@ ul  { list-style: none; }
   margin-top: var(--nav-h);
 }
 .gallery-view-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
+  padding: 16px 40px;
   border-bottom: 1px solid var(--border);
-  gap: 24px;
 }
 .gallery-view-meta {
   text-align: center;
-  flex: 1;
 }
 .gallery-view-meta h2 {
   font-family: var(--font-serif);
@@ -357,6 +355,7 @@ ul  { list-style: none; }
 }
 
 .back-btn {
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -374,14 +373,93 @@ ul  { list-style: none; }
 }
 .back-btn:hover { color: var(--dark); }
 
-.gv-download-btn {
+.gv-actions {
+  justify-self: end;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
-  font-size: 11px;
-  padding: 10px 20px;
 }
+
+.gv-actions-toggle {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.gv-actions-toggle:hover { color: var(--dark); }
+
+.gv-actions-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: var(--main);
+  border: 1px solid var(--border);
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 50;
+  min-width: 180px;
+  box-shadow: 0 4px 20px rgba(26,18,16,0.08);
+}
+.gv-actions-menu.open { display: flex; }
+
+.gv-actions-menu .btn,
+.gv-actions-menu .gv-credits-btn,
+.gv-actions-menu .gv-blog-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  padding: 13px 20px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--dark);
+  background: transparent;
+}
+.gv-actions-menu .btn:last-child,
+.gv-actions-menu .gv-credits-btn:last-child,
+.gv-actions-menu .gv-blog-btn:last-child { border-bottom: none; }
+.gv-actions-menu .btn:hover,
+.gv-actions-menu .gv-credits-btn:hover,
+.gv-actions-menu .gv-blog-btn:hover {
+  background: var(--border);
+  color: #000;
+}
+
+/* Credits modal */
+.pw-modal-inner.credits-modal-inner {
+  text-align: left;
+  width: min(560px, 90vw);
+}
+.credits-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.credits-modal-header .credits-heading {
+  margin-bottom: 0;
+}
+.credits-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--muted);
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.credits-close:hover { color: var(--dark); }
 
 /* Password modal */
 .pw-modal {
@@ -1119,7 +1197,5 @@ footer {
   .contact-value { font-size: 17px; }
   .mobile-menu  { padding: 28px 20px; }
   .galleries-grid { grid-template-columns: 1fr; }
-  .gallery-view-header { flex-wrap: wrap; gap: 16px; }
-  .gallery-view-meta { order: -1; flex: 0 0 100%; text-align: left; }
   .pw-modal-inner { padding: 44px 28px 36px; }
 }

@@ -47,6 +47,16 @@ const GALLERIES = [
     password:    'AnaYXabi26',
     driveFolder: '1K0IgJFpDBKhOW6UcO_VT59Z-NzSOv8f4',
     thumbnail:   'images/ana-xabi-thumb.jpg',
+    blogPost:    'https://kristinaphotography.es/post.html?id=ana-xabi-atlantic-2026',
+    credits: [
+      { role: 'VENUE',        name: 'Finca La Atlántida', handle: '@fincalaatlantida' },
+      { role: 'PHOTOGRAPHY',  name: 'Kristina',           handle: '@kristina_fotografa' },
+      { role: 'DRESS',        name: 'Rosa Carla',         handle: '@rosa_carla' },
+      { role: 'BRIDAL SHOES', name: 'Greta & Él',         handle: '@gretayel' },
+      { role: 'CAKE',         name: 'Habaziro',           handle: '@habaziroconcept' },
+      { role: 'BAND',         name: 'Jugones',            handle: '@jugonesss' },
+      { role: 'DJS',          name: 'DJ Braulio GZ',      handle: '@dj_brauliogz' },
+    ],
   },
   {
     id:          'lucia-angel-mayo-2026',
@@ -286,8 +296,18 @@ const gvName         = document.getElementById('gv-name');
 const gvMeta         = document.getElementById('gv-meta');
 const gvGrid         = document.getElementById('gallery-view-grid');
 const gvCount        = document.getElementById('gv-count');
-const downloadAllBtn = document.getElementById('download-all-btn');
-const backBtn        = document.getElementById('back-btn');
+const downloadAllBtn   = document.getElementById('download-all-btn');
+const creditsBtn       = document.getElementById('credits-btn');
+const blogBtn          = document.getElementById('blog-btn');
+const backBtn          = document.getElementById('back-btn');
+const gvActionsToggle  = document.getElementById('gv-actions-toggle');
+const gvActionsMenu    = document.getElementById('gv-actions-menu');
+
+gvActionsToggle.addEventListener('click', e => {
+  e.stopPropagation();
+  gvActionsMenu.classList.toggle('open');
+});
+document.addEventListener('click', () => gvActionsMenu.classList.remove('open'));
 
 let lightboxMedia = [];
 let lightboxIndex = 0;
@@ -298,6 +318,22 @@ async function openGalleryView(g) {
   gvMeta.dataset.en  = `${g.dateEn} · ${g.location}`;
   gvMeta.textContent = lang === 'es' ? gvMeta.dataset.es : gvMeta.dataset.en;
   downloadAllBtn.href = driveFolderUrl(g.driveFolder);
+
+  // Show/hide credits button
+  if (g.credits && g.credits.length) {
+    creditsBtn.style.display = '';
+    creditsBtn.onclick = () => openCreditsModal(g.credits);
+  } else {
+    creditsBtn.style.display = 'none';
+  }
+
+  // Show/hide blog button
+  if (g.blogPost) {
+    blogBtn.href = g.blogPost;
+    blogBtn.style.display = '';
+  } else {
+    blogBtn.style.display = 'none';
+  }
 
   pageGalleries.style.display = 'none';
   galleryView.style.display   = 'block';
@@ -352,6 +388,28 @@ backBtn.addEventListener('click', () => {
   galleryView.style.display   = 'none';
   pageGalleries.style.display = '';
   window.scrollTo(0, 0);
+});
+
+
+/* ─── Credits modal ──────────────────────────────────────────── */
+const creditsModal = document.getElementById('credits-modal');
+const creditsClose = document.getElementById('credits-close');  // now a .credits-close button
+const creditsList  = document.getElementById('credits-list');
+
+function openCreditsModal(credits) {
+  const heading = creditsModal.querySelector('.credits-heading');
+  heading.textContent = lang === 'es' ? 'Créditos' : 'Credits';
+  creditsList.innerHTML = credits.map(c => {
+    const ig = c.handle.replace('@', '');
+    return `<dt>${c.role}</dt><dd>${c.name} <a class="credits-ig" href="https://instagram.com/${ig}" target="_blank" rel="noopener">${c.handle}</a></dd>`;
+  }).join('');
+  creditsModal.classList.add('open');
+}
+
+creditsClose.addEventListener('click', () => creditsModal.classList.remove('open'));
+creditsModal.addEventListener('click', () => creditsModal.classList.remove('open'));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && creditsModal.classList.contains('open')) creditsModal.classList.remove('open');
 });
 
 
