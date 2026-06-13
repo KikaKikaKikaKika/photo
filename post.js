@@ -152,17 +152,61 @@ function renderPost() {
 setLang(lang);
 
 
-/* ── Comments form ───────────────────────────────────────────── */
+/* ── Comments ────────────────────────────────────────────────── */
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwoinrwnntl5UOtZeaXKYYMis_i3_-RmM4LphZDGUBbRPKFBiAsa8DjYaQEPuwX7E7TOA/exec';
+
+function loadComments() {
+  const listEl = document.getElementById('comments-list');
+  fetch(SCRIPT_URL)
+    .then(r => r.json())
+    .then(rows => {
+      listEl.innerHTML = '';
+      if (!rows.length) return;
+
+      const heading = document.createElement('h3');
+      heading.className = 'comments-heading';
+      heading.textContent = lang === 'es' ? 'Comentarios' : 'Comments';
+      listEl.appendChild(heading);
+
+      const list = document.createElement('ul');
+      list.className = 'comments-list';
+      rows.forEach(row => {
+        const firstName = row.name.split(/\s+/)[0];
+        const li = document.createElement('li');
+        li.className = 'comments-item';
+        li.innerHTML = `<span class="comments-name">${firstName}</span><p class="comments-text">${row.comment}</p>`;
+        list.appendChild(li);
+      });
+      listEl.appendChild(list);
+    })
+    .catch(() => {});
+}
+
+loadComments();
+
 const commentsForm   = document.getElementById('comments-form');
 const commentsThanks = document.getElementById('comments-thanks');
 
-commentsForm.addEventListener('submit', () => {
-  document.getElementById('fbzx').value = Math.floor(Math.random() * -1e15);
-  setTimeout(() => {
+commentsForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const name    = document.getElementById('comment-name').value.trim();
+  const comment = document.getElementById('comment-text').value.trim();
+  if (!name || !comment) return;
+
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `name=${encodeURIComponent(name)}&comment=${encodeURIComponent(comment)}`
+  }).then(() => {
     commentsForm.style.display = 'none';
     commentsThanks.style.display = '';
     commentsThanks.textContent = commentsThanks.dataset[lang];
-  }, 800);
+  }).catch(() => {
+    commentsForm.style.display = 'none';
+    commentsThanks.style.display = '';
+    commentsThanks.textContent = commentsThanks.dataset[lang];
+  });
 });
 
 

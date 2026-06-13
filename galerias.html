@@ -111,12 +111,14 @@
 
   <!-- ========== LIGHTBOX ========== -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    <div class="lb-top-controls" onclick="event.stopPropagation()">
+      <a id="lb-download" class="lb-download" download onclick="event.stopPropagation()">&#8595;</a>
+      <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    </div>
     <button class="lb-prev" onclick="event.stopPropagation(); moveLight(-1)">&#8592;</button>
     <div class="lb-media-wrap" onclick="event.stopPropagation()">
       <img id="lb-img" src="" alt="">
       <video id="lb-video" controls style="display:none"></video>
-      <a id="lb-download" class="lb-download" download onclick="event.stopPropagation()">&#8595; Download</a>
     </div>
     <button class="lb-next" onclick="event.stopPropagation(); moveLight(1)">&#8594;</button>
   </div>

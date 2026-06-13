@@ -75,6 +75,8 @@ function openLightbox() {
     lbImg.style.display = 'block';
     lbImg.src = src;
   }
+  const dlBtn = document.getElementById('lb-download');
+  if (dlBtn) { dlBtn.href = src; dlBtn.download = src.split('/').pop(); }
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }

@@ -29,13 +29,23 @@ const DRIVE_API_KEY = 'AIzaSyBBrP6Qw2uZW3jsi2lpAQL_51Cf-0wKjB0';
    ──────────────────────────────────────────────────────────── */
 const GALLERIES = [
   {
+    id:          'kris-tomas-junio-2026',
+    name:        'Kris y Tomas',
+    date:        '8 Junio 2026',
+    dateEn:      '8 June 2026',
+    location:    'Bratislava, Slovakia',
+    password:    'KrisYTomas26',
+    driveFolder: '1pojAC1nDryeP9_nAQqieCmLv0zKOvg6l',
+    thumbnail:   'images/kris-tomas-thumb.jpg',
+  },
+  {
     id:          'ana-xabi-mayo-2026',
     name:        'Ana y Xabi',
     date:        '23 Mayo 2026',
     dateEn:      '23 May 2026',
     location:    'O Grove',
     password:    'AnaYXabi26',
-    driveFolder: null,                              // ← add Drive folder ID when ready
+    driveFolder: '1K0IgJFpDBKhOW6UcO_VT59Z-NzSOv8f4',
     thumbnail:   'images/ana-xabi-thumb.jpg',
   },
   {

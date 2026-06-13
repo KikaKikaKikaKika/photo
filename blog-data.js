@@ -129,6 +129,7 @@ const BLOG_POSTS = [
       { labelEs: 'Flores',            labelEn: 'Florals',      value: '' },
       { labelEs: 'Banda',             labelEn: 'Band',         value: 'Jugones',        instagram: 'jugonesss' },
       { labelEs: 'DJs',               labelEn: 'DJs',          value: 'DJ Braulio GZ',  instagram: 'dj_brauliogz' },
+      { labelEs: 'Vestido de novia',   labelEn: 'Dress',        value: 'Rosa Carla',     instagram: 'rosa_carla' },
       { labelEs: 'Catering',          labelEn: 'Catering',     value: '' },
     ],
   },
