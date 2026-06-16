@@ -338,6 +338,7 @@ async function openGalleryView(g) {
   pageGalleries.style.display = 'none';
   galleryView.style.display   = 'block';
   window.scrollTo(0, 0);
+  setTimeout(_kfShowIgPopup, 40000);
 
   // show loading state
   if (!g.driveFolder) {
@@ -456,3 +457,36 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') moveLight(1);
   if (e.key === 'ArrowLeft')  moveLight(-1);
 });
+
+
+/* ── Instagram / contact popup ───────────────────────────────── */
+const _kfPopupEl = (() => {
+  const el = document.createElement('div');
+  el.className = 'kf-popup';
+  el.innerHTML = `
+    <button class="kf-popup-close" aria-label="Cerrar">&#10005;</button>
+    <p class="kf-popup-heading"></p>
+    <p class="kf-popup-body"></p>
+    <div class="kf-popup-actions">
+      <a class="btn" href="https://www.instagram.com/kristina_fotografa/" target="_blank" rel="noopener" id="kf-pp-follow"></a>
+      <a class="btn" href="mailto:hergottovak@gmail.com" id="kf-pp-contact"></a>
+    </div>
+  `;
+  document.body.appendChild(el);
+  el.querySelector('.kf-popup-close').addEventListener('click', () => el.classList.remove('open'));
+  return el;
+})();
+
+function _kfShowIgPopup() {
+  const KEY = 'kf-ig-popup';
+  if (sessionStorage.getItem(KEY)) return;
+  const l = lang || localStorage.getItem('kf-lang') || 'es';
+  _kfPopupEl.querySelector('.kf-popup-heading').textContent = l === 'es' ? '¿Te gustan las fotos?' : 'Enjoying the photos?';
+  _kfPopupEl.querySelector('.kf-popup-body').textContent    = l === 'es'
+    ? 'Sígueme para ver más trabajo o cuéntame sobre tu proyecto.'
+    : 'Follow me for more, or tell me about your project.';
+  document.getElementById('kf-pp-follow').textContent  = l === 'es' ? 'Seguir' : 'Follow';
+  document.getElementById('kf-pp-contact').textContent = l === 'es' ? 'Contactar' : 'Contact';
+  sessionStorage.setItem(KEY, '1');
+  _kfPopupEl.classList.add('open');
+}

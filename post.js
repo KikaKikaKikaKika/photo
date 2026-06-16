@@ -243,3 +243,52 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') moveLight(1);
   if (e.key === 'ArrowLeft')  moveLight(-1);
 });
+
+
+/* ── Instagram / contact popup ───────────────────────────────── */
+(function () {
+  const KEY = 'kf-ig-popup';
+  if (sessionStorage.getItem(KEY)) return;
+
+  const el = document.createElement('div');
+  el.className = 'kf-popup';
+  el.innerHTML = `
+    <button class="kf-popup-close" aria-label="Cerrar">&#10005;</button>
+    <p class="kf-popup-heading"></p>
+    <p class="kf-popup-body"></p>
+    <div class="kf-popup-actions">
+      <a class="btn" href="https://www.instagram.com/kristina_fotografa/" target="_blank" rel="noopener" id="kf-pp-follow"></a>
+      <a class="btn" href="mailto:hergottovak@gmail.com" id="kf-pp-contact"></a>
+    </div>
+  `;
+  document.body.appendChild(el);
+  el.querySelector('.kf-popup-close').addEventListener('click', () => el.classList.remove('open'));
+
+  function show() {
+    if (sessionStorage.getItem(KEY)) return;
+    const l = localStorage.getItem('kf-lang') || 'es';
+    el.querySelector('.kf-popup-heading').textContent = l === 'es' ? '¿Te ha gustado?' : 'Enjoying the read?';
+    el.querySelector('.kf-popup-body').textContent    = l === 'es'
+      ? 'Sígueme para ver más trabajo o cuéntame sobre tu proyecto.'
+      : 'Follow me for more, or tell me about your project.';
+    document.getElementById('kf-pp-follow').textContent  = l === 'es' ? 'Seguir' : 'Follow';
+    document.getElementById('kf-pp-contact').textContent = l === 'es' ? 'Contactar' : 'Contact';
+    sessionStorage.setItem(KEY, '1');
+    el.classList.add('open');
+  }
+
+  let scrolled = false;
+  let timed    = false;
+  function tryShow() { if (scrolled && timed) show(); }
+
+  window.addEventListener('scroll', function onScroll() {
+    if (scrolled) return;
+    if ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight >= 0.4) {
+      scrolled = true;
+      window.removeEventListener('scroll', onScroll);
+      tryShow();
+    }
+  }, { passive: true });
+
+  setTimeout(() => { timed = true; tryShow(); }, 40000);
+})();
