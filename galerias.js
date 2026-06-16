@@ -350,6 +350,12 @@ async function openGalleryView(g) {
   try {
     const files = await fetchFolderImages(g.driveFolder);
 
+    files.sort((a, b) => {
+      const numA = parseInt(a.name.replace(/\D/g, ''), 10);
+      const numB = parseInt(b.name.replace(/\D/g, ''), 10);
+      return numA - numB;
+    });
+
     if (files.length === 0) {
       gvGrid.innerHTML = `<p class="gv-loading">${lang === 'es' ? 'No hay imágenes todavía.' : 'No images yet.'}</p>`;
       return;
