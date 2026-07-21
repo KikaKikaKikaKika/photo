@@ -29,6 +29,16 @@ const DRIVE_API_KEY = 'AIzaSyBBrP6Qw2uZW3jsi2lpAQL_51Cf-0wKjB0';
    ──────────────────────────────────────────────────────────── */
 const GALLERIES = [
   {
+    id:          'alejandro-julio-2026',
+    name:        'Alejandro',
+    date:        '18 Julio 2026',
+    dateEn:      '18 July 2026',
+    location:    'Vigo',
+    password:    'Alejandro26',
+    driveFolder: '1DpKYwLheDohyhVH4Sj2-R1vv79oueZ0e',
+    thumbnail:   'images/alejandro-thumb.jpg',
+  },
+  {
     id:          'kris-tomas-junio-2026',
     name:        'Kris y Tomas',
     date:        '8 Junio 2026',
