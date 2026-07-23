@@ -317,6 +317,7 @@ const BLOG_POSTS = [
 
     ],
     credits: [
+      { labelEs: 'Restaurante',        labelEn: 'Restaurant',  value: 'La Trastienda del Cuatro',                 instagram: '' },
       { labelEs: 'Cócteles',          labelEn: 'Cocktails',   value: 'Restaurante Cañaveral',                    instagram: '' },
       { labelEs: 'Ceremonia',         labelEn: 'Ceremony',    value: 'Pinacoteca Francisco Fernández del Riego', instagram: '' },
       { labelEs: 'Fiesta',            labelEn: 'Party',       value: 'Playa de Area Fofa',                       instagram: '' },
