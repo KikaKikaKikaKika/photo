@@ -308,8 +308,8 @@ const BLOG_POSTS = [
 
       {
         type: 'text',
-        es:   "For us, that meant spending the day in our favourite places with our favourite people—starting with cocktails, getting married in an art gallery, sharing an incredible meal with our families, and ending barefoot on a beach with unlimited food, drinks, several kilos of cheesecake, and our favourite DJ.",
-        en:   "For us, that meant spending the day in our favourite places with our favourite people—starting with cocktails, getting married in an art gallery, sharing an incredible meal with our families, and ending barefoot on a beach with unlimited food, drinks, several kilos of cheesecake, and our favourite DJ.",
+        es:   "For us, that meant spending the day in the places we love most with our people—starting with cocktails, visiting an art gallery, sharing an incredible meal with our families, and ending barefoot on a beach with unlimited food, drinks, kilos of cheesecake, and dancing to the best DJ.",
+        en:   "For us, that meant spending the day in the places we love most with our people—starting with cocktails, visiting an art gallery, sharing an incredible meal with our families, and ending barefoot on a beach with unlimited food, drinks, kilos of cheesecake, and dancing to the best DJ.",
       },
 
 
