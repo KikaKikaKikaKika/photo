@@ -1071,7 +1071,72 @@ const photoFiles = [
   'photos/IMG_1087.jpg',
   'photos/IMG_1001.jpg',
   'photos/IMG_0958.jpg',
-  'photos/IMG_0716.jpg'
+  'photos/IMG_0716.jpg',
+  'photos/IMG_5790.jpg',
+  'photos/IMG_6000.jpg',
+  'photos/IMG_6086.jpg',
+  'photos/IMG_6186.jpg',
+  'photos/IMG_6264.jpg',
+  'photos/IMG_6288.jpg',
+  'photos/IMG_6324.jpg',
+  'photos/IMG_6371.jpg',
+  'photos/IMG_6403.jpg',
+  'photos/IMG_6447.jpg',
+  'photos/IMG_6499.jpg',
+  'photos/IMG_6525.jpg',
+  'photos/IMG_6570.jpg',
+  'photos/IMG_6591.jpg',
+  'photos/IMG_6715.jpg',
+  'photos/IMG_6754.jpg',
+  'photos/IMG_6782.jpg',
+  'photos/IMG_6825-2.jpg',
+  'photos/IMG_6913.jpg',
+  'photos/IMG_6967-2.jpg',
+  'photos/IMG_7040.jpg',
+  'photos/IMG_7065.jpg',
+  'photos/IMG_7081.jpg',
+  'photos/IMG_7381.jpg',
+  'photos/IMG_7671.jpg',
+  'photos/IMG_7686.jpg',
+  'photos/IMG_7704.jpg',
+  'photos/IMG_7738.jpg',
+  'photos/IMG_7787.jpg',
+  'photos/IMG_7864.jpg',
+  'photos/IMG_7881.jpg',
+  'photos/IMG_5549.jpg',
+  'photos/IMG_5569.jpg',
+  'photos/IMG_5610.jpg',
+  'photos/IMG_5669.jpg',
+  'photos/IMG_5750.jpg',
+  'photos/IMG_5776.jpg',
+  'photos/IMG_5929.jpg',
+  'photos/IMG_6014.jpg',
+  'photos/IMG_6138.jpg',
+  'photos/IMG_6314.jpg',
+  'photos/IMG_6322.jpg',
+  'photos/IMG_6476.jpg',
+  'photos/IMG_6520.jpg',
+  'photos/IMG_6558.jpg',
+  'photos/IMG_6573.jpg',
+  'photos/IMG_6586-2.jpg',
+  'photos/IMG_6656.jpg',
+  'photos/IMG_6781.jpg',
+  'photos/IMG_6847.jpg',
+  'photos/IMG_6851.jpg',
+  'photos/IMG_6869-2.jpg',
+  'photos/IMG_6955.jpg',
+  'photos/IMG_7009-2.jpg',
+  'photos/IMG_7028.jpg',
+  'photos/IMG_7044.jpg',
+  'photos/IMG_7106.jpg',
+  'photos/IMG_7164.jpg',
+  'photos/IMG_7313.jpg',
+  'photos/IMG_7409.jpg',
+  'photos/IMG_7414.jpg',
+  'photos/IMG_7463-2.jpg',
+  'photos/IMG_7557.jpg',
+  'photos/IMG_7586.jpg',
+  'photos/IMG_7744-2.jpg'
 ];
 
 // ── Removed photos ──
@@ -1096,7 +1161,16 @@ const removedPhotos = new Set([
   '18070895896974247','18073325572779733','18105846055552266','18110517670608927',
   '18111720862478761','18139829059405316','18141010063333653','18198148159315512',
   '18274978303228798','18324261775182845','18352498129092163','18357475690158154',
-  '18359246065148640','18412789663099343','18507821068036696','18510542044053865'
+  '18359246065148640','18412789663099343','18507821068036696','18510542044053865',
+  '18092426947600624','17844077763605685','18103334662417963','18151622518314443',
+  '17893093656170006','18107481013876598','17894294661213445','18323518777177864',
+  '18068793191138975','18081269590476344','18289981039162385','18073982477217089',
+  '17857132497173973','18067570772042348','18025246364150188','18070975480515020',
+  '18017738429412852','17967690890811782','17904610430986975','18086860651800176',
+  'IMG_5610','18134607235414492','18539875267036329','18028304479916931',
+  '18067411090590526','18057550010231515','18056522678066529','18017344535352046',
+  '18086472031909175','18125135920324080','18092547370610765','IMG_7744-2',
+  '18092118142624609','18323634493127132','18243193096305706','18250061515255933'
 ]);
 
 // ── Tab definitions ──
@@ -1218,6 +1292,18 @@ const specialTabs = [
     '18032514437240009','18039439412493453','18041998984861194','18055995139796149',
     '18066836842546095','18067088218611662','18075361825527375','18115199047401904',
     '18251253784266100','18268002220223811','18419450323077190'
+  ])},
+  { key: 'tdf', label: 'Tour de France', first: 'IMG_5790', ids: new Set([
+    'IMG_5549','IMG_5569','IMG_5610','IMG_5669','IMG_5750','IMG_5776','IMG_5790','IMG_5929',
+    'IMG_6000','IMG_6014','IMG_6086','IMG_6138','IMG_6186','IMG_6264','IMG_6288',
+    'IMG_6314','IMG_6322','IMG_6324','IMG_6371','IMG_6403','IMG_6447','IMG_6476',
+    'IMG_6499','IMG_6520','IMG_6525','IMG_6558','IMG_6570','IMG_6573','IMG_6586-2',
+    'IMG_6591','IMG_6656','IMG_6715','IMG_6754','IMG_6781','IMG_6782','IMG_6825-2',
+    'IMG_6847','IMG_6851','IMG_6869-2','IMG_6913','IMG_6955','IMG_6967-2',
+    'IMG_7009-2','IMG_7028','IMG_7040','IMG_7044','IMG_7065','IMG_7081','IMG_7106',
+    'IMG_7164','IMG_7313','IMG_7381','IMG_7409','IMG_7414','IMG_7463-2',
+    'IMG_7557','IMG_7586','IMG_7671','IMG_7686','IMG_7704','IMG_7738',
+    'IMG_7744-2','IMG_7787','IMG_7864','IMG_7881'
   ])},
   { key: 'championships', label: 'Championships', ids: new Set([
     '17846766309561504','17852442999206781','17852450910403102','17852550462482356',
@@ -1423,6 +1509,18 @@ function showPage(name) {
   document.getElementById('nav-' + name).classList.add('active');
 }
 
+function toggleMobileNav() {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById('hamburger-btn');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+function closeMobileNav() {
+  document.getElementById('mobile-nav').classList.remove('open');
+  document.getElementById('hamburger-btn').classList.remove('open');
+}
+
 document.getElementById('nav-grid').classList.add('active');
 setActiveTab('all');
 
@@ -1487,4 +1585,102 @@ function openBookLight(index) {
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
   document.querySelector('.lb-actions').style.display = 'none';
+}
+
+// ── i18n ──
+const translations = {
+  en: {
+    'nav.work': 'Work',
+    'nav.about': 'About',
+    'nav.book': 'Book',
+    'nav.exhibitions': 'Exhibitions',
+    'about.available': 'Available to hire',
+    'about.bio': 'Kristina is a photographer based in Spain focused on movement, emotion, and contrast. Her work captures the energy of sport, the discipline of performance, and the quiet moments in between — blending dynamic action with intimate visual storytelling. With a strong eye for composition and atmosphere, she creates images that feel both powerful and personal, whether documenting athletes, events, or everyday life in motion.',
+    'about.stat.book': 'Book',
+    'about.stat.competitions': 'Competitions covered',
+    'about.stat.sports': 'Sport categories',
+    'about.stat.countries': 'Countries',
+    'about.news': "Exciting projects ahead — this year I'll be photographing the IRONMAN Kärnten-Klagenfurt, Austria, as well as capturing a cyclist inside a wind tunnel in Belgium.",
+    'expo.sub': 'Selected exhibitions and shows',
+    'expo.title': 'Exhibitions',
+    'expo1.title': 'Triathlon Across Spain',
+    'expo1.desc': "Kristína Hergottová's first exhibition, Triathlon Across Spain, offered a captivating glimpse into the world of triathlon through her lens. The exhibition focused on the cycling segment, one of the sport's most dynamic and visually striking elements, capturing its speed, energy, and intensity. All the photographs on display, taken during 2024 and 2025, ranged from the waves of Zarautz and the festive streets of Frómista to the Paris Paralympic Games and the Championships in Pontevedra, capturing unforgettable moments and the extraordinary spirit of Spanish athletes. They celebrated not only the sport itself, but also the courage, resilience, and relentless pursuit of excellence that defined these athletes.",
+    'book.label': 'First Book',
+    'book.desc1': "Triathlon Across Spain is Kristina's first book, a unique collection of photographs capturing the spirit of triathlon across Spain. Featuring images taken during 2024 and 2025, the book showcases 12 competitions and more than 50 Spanish triathletes, highlighting some of the most iconic events, from Zarautz and Frómista to Pontevedra and the Paralympic Games in Paris.",
+    'book.desc2': 'Through powerful moments on the bike course and beyond, the book tells the story of athletes, resilience, and passion, celebrating not only the sport itself but also the determination and courage behind every race.',
+    'book.btn': 'Send request to buy',
+    'popup.title': 'Interested in this photo?',
+    'popup.text': 'Send an email to <a href="mailto:hergottovak@gmail.com">hergottovak@gmail.com</a> to purchase a digital or printed version.',
+    'reshuffle': '↺ Reshuffle',
+    'tab.all': 'All',
+    'tab.vuelta': 'La Vuelta',
+    'tab.paralympics': 'ParaOlympics 2024',
+    'tab.championships': 'Championships',
+    'tab.tdf': 'Tour de France',
+  },
+  es: {
+    'nav.work': 'Trabajo',
+    'nav.about': 'Sobre mí',
+    'nav.book': 'Libro',
+    'nav.exhibitions': 'Exposiciones',
+    'about.available': 'Disponible para contratar',
+    'about.bio': 'Kristina es una fotógrafa con base en España, centrada en el movimiento, la emoción y el contraste. Su trabajo captura la energía del deporte, la disciplina del rendimiento y los momentos tranquilos entre medias — combinando la acción dinámica con la narración visual íntima. Con un gran ojo para la composición y la atmósfera, crea imágenes que se sienten poderosas y personales, tanto si documenta atletas, eventos o la vida cotidiana en movimiento.',
+    'about.stat.book': 'Libro',
+    'about.stat.competitions': 'Competiciones cubiertas',
+    'about.stat.sports': 'Categorías deportivas',
+    'about.stat.countries': 'Países',
+    'about.news': 'Proyectos emocionantes por delante — este año fotografiaré el IRONMAN Kärnten-Klagenfurt, Austria, y también capturaré a un ciclista dentro de un túnel de viento en Bélgica.',
+    'expo.sub': 'Exposiciones y muestras seleccionadas',
+    'expo.title': 'Exposiciones',
+    'expo1.title': 'Triatlón por España',
+    'expo1.desc': 'La primera exposición de Kristína Hergottová, Triatlón por España, ofreció una fascinante mirada al mundo del triatlón a través de su objetivo. La exposición se centró en el segmento de ciclismo, uno de los elementos más dinámicos y visualmente impactantes del deporte, capturando su velocidad, energía e intensidad. Todas las fotografías expuestas, tomadas durante 2024 y 2025, abarcaban desde las olas de Zarautz y las festivas calles de Frómista hasta los Juegos Paralímpicos de París y los Campeonatos en Pontevedra, capturando momentos inolvidables y el extraordinario espíritu de los atletas españoles. Celebraban no solo el deporte en sí, sino también el coraje, la resiliencia y la búsqueda incesante de la excelencia que definieron a estos atletas.',
+    'book.label': 'Primer Libro',
+    'book.desc1': 'Triatlón por España es el primer libro de Kristina, una colección única de fotografías que capturan el espíritu del triatlón por España. Con imágenes tomadas durante 2024 y 2025, el libro muestra 12 competiciones y más de 50 triatletas españoles, destacando algunos de los eventos más icónicos, desde Zarautz y Frómista hasta Pontevedra y los Juegos Paralímpicos de París.',
+    'book.desc2': 'A través de momentos poderosos en el circuito de ciclismo y más allá, el libro narra la historia de los atletas, la resiliencia y la pasión, celebrando no solo el deporte en sí, sino también la determinación y el coraje detrás de cada carrera.',
+    'book.btn': 'Enviar solicitud de compra',
+    'popup.title': '¿Interesado en esta foto?',
+    'popup.text': 'Envía un correo a <a href="mailto:hergottovak@gmail.com">hergottovak@gmail.com</a> para adquirir una versión digital o impresa.',
+    'reshuffle': '↺ Reorganizar',
+    'tab.all': 'Todo',
+    'tab.vuelta': 'La Vuelta',
+    'tab.paralympics': 'Paraolímpicos 2024',
+    'tab.championships': 'Campeonatos',
+    'tab.tdf': 'Tour de France',
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  document.querySelectorAll('.filter-tab, .filter-tab-special').forEach(btn => {
+    const key = 'tab.' + btn.dataset.key;
+    if (t[key] !== undefined) btn.textContent = t[key];
+  });
+
+  document.querySelectorAll('#filterSelect option').forEach(opt => {
+    const key = 'tab.' + opt.value;
+    if (t[key] !== undefined) opt.textContent = t[key];
+  });
+
+  reshuffleBtn.textContent = t['reshuffle'];
+  document.getElementById('lang-btn').textContent = lang === 'en' ? 'ES' : 'EN';
+  const mobileBtn = document.getElementById('lang-btn-mobile');
+  if (mobileBtn) mobileBtn.textContent = lang === 'en' ? 'ES' : 'EN';
+}
+
+function toggleLang() {
+  setLang(currentLang === 'en' ? 'es' : 'en');
 }
