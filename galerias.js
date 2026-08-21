@@ -29,6 +29,16 @@ const DRIVE_API_KEY = 'AIzaSyBBrP6Qw2uZW3jsi2lpAQL_51Cf-0wKjB0';
    ──────────────────────────────────────────────────────────── */
 const GALLERIES = [
   {
+    id:          'patri-familia-agosto-2026',
+    name:        'Familia de Patri',
+    date:        '17 Agosto 2026',
+    dateEn:      '17 August 2026',
+    location:    'Vigo',
+    password:    'family5',
+    driveFolder: '1I-tj9BMXlBqam_bHMYg9PqiKO0Fp1krt',
+    thumbnail:   'images/patri-familia-thumb.jpg',
+  },
+  {
     id:          'alejandro-julio-2026',
     name:        'Alejandro',
     date:        '18 Julio 2026',
