@@ -29,6 +29,16 @@ const DRIVE_API_KEY = 'AIzaSyBBrP6Qw2uZW3jsi2lpAQL_51Cf-0wKjB0';
    ──────────────────────────────────────────────────────────── */
 const GALLERIES = [
   {
+    id:          'nerea-adri-agosto-2026',
+    name:        'Nerea y Adri',
+    date:        '18 Agosto 2026',
+    dateEn:      '18 August 2026',
+    location:    'Vigo',
+    password:    'NereaYAdri2',
+    driveFolder: '1w_3zOzw_0CDw9wCb3dK_OmVzBoaoEsRu',
+    thumbnail:   'images/nerea-adri-thumb.jpg',
+  },
+  {
     id:          'patri-familia-agosto-2026',
     name:        'Familia de Patri',
     date:        '17 Agosto 2026',
