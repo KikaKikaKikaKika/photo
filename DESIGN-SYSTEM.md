@@ -72,8 +72,10 @@ Extracted from `style.css` and all HTML pages in this repository.
 | `type/label/micro` | sans | 10px | 400 | — | 0.2–0.28em | uppercase |
 | `type/label/footnote` | sans | 12px | 400 | — | 0.1em | — |
 | `type/interactive/contact-value` | serif | 20px | 400 | — | — | — |
+| `type/interactive/contact-value/mobile` | serif | 17px | 400 | — | — | — |
 | `type/interactive/password-input` | sans | 20px | 300 | — | 0.3em | — |
 | `type/interactive/comment-name` | sans | 13px | 500 | — | 0.04em | uppercase |
+| `type/label/nav/mobile` | sans | 12px | 400 | — | 0.22em | uppercase |
 
 ---
 
@@ -179,6 +181,48 @@ Extracted from layout values used across the site:
 
 ---
 
+## Figma Components
+
+All components live on the **Components** page of the Figma file (`fLcSEIIOqFTUtxzPS8fZEY`).
+Variants use `Viewport=Desktop/Mobile` and `State=Default/Hover/Active` properties.
+
+| Component | Variants | Notes |
+|---|---|---|
+| **Header** | `Viewport=Desktop` (1440×76px) · `Viewport=Mobile` (390×64px) | Mobile hides nav links, shows hamburger |
+| **Mobile Menu** | — (standalone) | Drawer shown on hamburger tap; 5 nav items with dividers |
+| **Nav Link** | `State=Default/Hover/Active` | TEXT property: `Label` |
+| **Button** | `State=Default/Hover` | TEXT property: `Label` |
+| **Language Toggle** | `State=Default/Hover` | TEXT property: `Language` |
+| **Footer** | — (standalone) | Token-bound semi-transparent text |
+| **Gallery Item** | — (standalone) | Image placeholder + overlay |
+| **Gallery Card** | `State=Default/Hover` | Galerías page card with title + meta |
+| **Blog Card** | `State=Default/Hover` × `Viewport=Desktop/Mobile` | Desktop 860px · Mobile 390px (1fr+120px thumb) |
+| **Lightbox** | — (standalone) | Dark overlay, prev/next arrows, close + download |
+| **Session Tag** | — (standalone) | Pill shape (`radius/pill`); TEXT property: `Label` |
+| **Contact Link Row** | `Viewport=Desktop` (horizontal) · `Viewport=Mobile` (stacked) | TEXT properties: `Label`, `Value`; mobile value 17px |
+
+### Typography tokens per component
+
+| Component text | Token |
+|---|---|
+| Nav Link label | `Label/Nav` |
+| Mobile Menu nav items | `Label/Nav/Mobile` (12px) |
+| Button label | `Label/Btn` |
+| Language Toggle | `Label/Nav` |
+| Footer social handle | `Label/Nav` |
+| Footer copyright | `Label/Footnote` |
+| Session Tag label | `Label/Btn` |
+| Contact Link Row — label | `Label/Nav` |
+| Contact Link Row — value (desktop) | `Interactive/Contact-Value` (20px serif) |
+| Contact Link Row — value (mobile) | `Interactive/Contact-Value/Mobile` (17px serif) |
+| Gallery Card title | `Heading/Gallery-Card` |
+| Gallery Card meta | `Label/Meta` |
+| Blog Card title | `Heading/Blog-Card` |
+| Blog Card meta | `Label/Meta` |
+| Blog Card description | `Body/Small` |
+
+---
+
 ## JSON Tokens Block
 
 ```json
@@ -231,6 +275,7 @@ Extracted from layout values used across the site:
       "md+":  { "value": "15px" },
       "base": { "value": "16px" },
       "lg":   { "value": "18px" },
+      "xl-":  { "value": "17px", "comment": "contact-value mobile override" },
       "xl":   { "value": "20px" },
       "2xl":  { "value": "22px" },
       "3xl":  { "value": "clamp(20px, 2vw, 26px)" },
